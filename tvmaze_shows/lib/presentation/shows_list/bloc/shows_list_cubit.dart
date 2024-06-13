@@ -9,13 +9,25 @@ class ShowsListCubit extends Cubit<ShowsListState> {
 
   final _getShowsByPageUseCase = GetIt.instance<GetShowsByPageUseCase>();
 
-  Future<void> getShows({int? page}) async {
-    emit(const ShowsListLoading());
+  Future<void> init() async {
     try {
-      final shows = await _getShowsByPageUseCase(page ?? 0);
-      emit(ShowsListLoaded(shows));
+      final shows = await _getShowsByPageUseCase(0);
+      emit(ShowsListLoaded(shows, 0));
     } catch (e) {
       emit(ShowsListError(e.toString()));
+    }
+  }
+
+  Future<void> getShows() async {
+    if (state is ShowsListLoaded) {
+      final currentPage = (state as ShowsListLoaded).page + 1;
+      final cubitShows = (state as ShowsListLoaded).shows;
+      try {
+        final shows = await _getShowsByPageUseCase(currentPage);
+        emit(ShowsListLoaded([...cubitShows, ...shows], currentPage));
+      } catch (e) {
+        emit(ShowsListError(e.toString()));
+      }
     }
   }
 }

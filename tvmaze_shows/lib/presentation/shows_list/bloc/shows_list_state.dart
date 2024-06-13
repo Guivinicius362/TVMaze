@@ -13,11 +13,21 @@ class ShowsListLoading extends ShowsListState {
 
 class ShowsListLoaded extends ShowsListState {
   final List<ShowModel> shows;
-
-  const ShowsListLoaded(this.shows);
+  final int page;
+  const ShowsListLoaded(this.shows, this.page);
 
   @override
-  List<Object> get props => [shows];
+  List<Object> get props => [shows, page];
+
+  ShowsListLoaded copyWith({
+    List<ShowModel>? shows,
+    int? page,
+  }) {
+    return ShowsListLoaded(
+      shows ?? this.shows,
+      page ?? this.page,
+    );
+  }
 }
 
 class ShowsListError extends ShowsListState {

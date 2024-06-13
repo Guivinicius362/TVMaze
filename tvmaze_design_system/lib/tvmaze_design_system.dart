@@ -1,7 +1,2 @@
-library tvmaze_design_system;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:tvmaze_design_system/text_styles/tvmaze_text_styles.dart';
+export 'package:tvmaze_design_system/sizes/tvmaze_sizes.dart';
