@@ -1,4 +1,4 @@
-library tvmaze_series;
+library tvmaze_shows;
 
 /// A Calculator.
 class Calculator {

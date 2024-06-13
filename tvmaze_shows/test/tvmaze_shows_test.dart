@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:tvmaze_series/tvmaze_series.dart';
+import 'package:tvmaze_shows/tvmaze_shows.dart';
 
 void main() {
   test('adds one to input values', () {
