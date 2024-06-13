@@ -1,0 +1,91 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "tvmaze",
+            "request": "launch",
+            "type": "dart",
+            "program": "${workspaceFolder}/tvmaze/lib/main.dart"
+        },
+        {
+            "name": "tvmaze",
+            "cwd": "tvmaze",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "tvmaze (profile mode)",
+            "cwd": "tvmaze",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "tvmaze (release mode)",
+            "cwd": "tvmaze",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "tvmaze_core",
+            "cwd": "tvmaze_core",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "tvmaze_core (profile mode)",
+            "cwd": "tvmaze_core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "tvmaze_core (release mode)",
+            "cwd": "tvmaze_core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "tvmaze_design_system",
+            "cwd": "tvmaze_design_system",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "tvmaze_design_system (profile mode)",
+            "cwd": "tvmaze_design_system",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "tvmaze_design_system (release mode)",
+            "cwd": "tvmaze_design_system",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "tvmaze_shows",
+            "cwd": "tvmaze_shows",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "tvmaze_shows (profile mode)",
+            "cwd": "tvmaze_shows",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "tvmaze_shows (release mode)",
+            "cwd": "tvmaze_shows",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

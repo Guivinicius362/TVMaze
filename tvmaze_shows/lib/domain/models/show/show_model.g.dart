@@ -8,27 +8,39 @@ part of 'show_model.dart';
 
 ShowModel _$ShowModelFromJson(Map<String, dynamic> json) => ShowModel(
       id: (json['id'] as num).toInt(),
-      url: json['url'] as String,
-      name: json['name'] as String,
-      type: json['type'] as String,
-      language: json['language'] as String,
+      url: json['url'] as String?,
+      name: json['name'] as String?,
+      type: json['type'] as String?,
+      language: json['language'] as String?,
       genres:
-          (json['genres'] as List<dynamic>).map((e) => e as String).toList(),
-      status: json['status'] as String,
-      runtime: (json['runtime'] as num).toInt(),
-      averageRuntime: (json['averageRuntime'] as num).toInt(),
-      premiered: json['premiered'] as String,
+          (json['genres'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      status: json['status'] as String?,
+      runtime: (json['runtime'] as num?)?.toInt(),
+      averageRuntime: (json['averageRuntime'] as num?)?.toInt(),
+      premiered: json['premiered'] as String?,
       ended: json['ended'] as String?,
       officialSite: json['officialSite'] as String?,
-      schedule: Schedule.fromJson(json['schedule'] as Map<String, dynamic>),
-      rating: Rating.fromJson(json['rating'] as Map<String, dynamic>),
-      weight: (json['weight'] as num).toInt(),
-      network: Network.fromJson(json['network'] as Map<String, dynamic>),
-      externals: Externals.fromJson(json['externals'] as Map<String, dynamic>),
-      image: ShowImage.fromJson(json['image'] as Map<String, dynamic>),
-      summary: json['summary'] as String,
-      updated: (json['updated'] as num).toInt(),
-      links: Links.fromJson(json['links'] as Map<String, dynamic>),
+      schedule: json['schedule'] == null
+          ? null
+          : Schedule.fromJson(json['schedule'] as Map<String, dynamic>),
+      rating: json['rating'] == null
+          ? null
+          : Rating.fromJson(json['rating'] as Map<String, dynamic>),
+      weight: (json['weight'] as num?)?.toInt(),
+      network: json['network'] == null
+          ? null
+          : Network.fromJson(json['network'] as Map<String, dynamic>),
+      externals: json['externals'] == null
+          ? null
+          : Externals.fromJson(json['externals'] as Map<String, dynamic>),
+      image: json['image'] == null
+          ? null
+          : ShowImage.fromJson(json['image'] as Map<String, dynamic>),
+      summary: json['summary'] as String?,
+      updated: (json['updated'] as num?)?.toInt(),
+      links: json['links'] == null
+          ? null
+          : Links.fromJson(json['links'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ShowModelToJson(ShowModel instance) => <String, dynamic>{
