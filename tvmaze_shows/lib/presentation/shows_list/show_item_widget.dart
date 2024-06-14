@@ -13,19 +13,21 @@ class ShowItemWidget extends StatelessWidget {
       footer: GridTileBar(
         backgroundColor: Colors.black45,
         title: Text(
-          show.name!,
+          show.name ?? 'unknown',
           textAlign: TextAlign.center,
         ),
       ),
-      child: Hero(
-        tag: show.id,
-        child: FittedBox(
-          fit: BoxFit.contain,
-          child: CachedNetworkImage(
-            imageUrl: show.image!.original,
-          ),
-        ),
-      ),
+      child: show.image != null
+          ? Hero(
+              tag: show.id ?? 0,
+              child: FittedBox(
+                fit: BoxFit.contain,
+                child: CachedNetworkImage(
+                  imageUrl: show.image!.original,
+                ),
+              ),
+            )
+          : const Placeholder(),
     );
   }
 }

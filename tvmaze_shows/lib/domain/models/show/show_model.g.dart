@@ -7,7 +7,7 @@ part of 'show_model.dart';
 // **************************************************************************
 
 ShowModel _$ShowModelFromJson(Map<String, dynamic> json) => ShowModel(
-      id: (json['id'] as num).toInt(),
+      id: (json['id'] as num?)?.toInt(),
       url: json['url'] as String?,
       name: json['name'] as String?,
       type: json['type'] as String?,

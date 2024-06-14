@@ -4,6 +4,7 @@ import 'package:tvmaze_shows/domain/models/show/show_model.dart';
 
 abstract class ShowRepository {
   Future<List<ShowModel>> getShows(int page);
+  Future<List<ShowModel>> searchShow(String query);
 }
 
 class ShowRepositoryImpl implements ShowRepository {
@@ -16,6 +17,17 @@ class ShowRepositoryImpl implements ShowRepository {
     final response = await remoteShowDataSource.getShows(page);
     final List<ShowModel> shows = [];
     for (final show in response.data!) {
+      shows.add(ShowModel.fromJson(show as Map<String, dynamic>));
+    }
+    return shows;
+  }
+
+  @override
+  Future<List<ShowModel>> searchShow(String query) async {
+    final response = await remoteShowDataSource.searchShow(query);
+    final List<ShowModel> shows = [];
+    for (final data in response.data!) {
+      final show = data['show'];
       shows.add(ShowModel.fromJson(show as Map<String, dynamic>));
     }
     return shows;

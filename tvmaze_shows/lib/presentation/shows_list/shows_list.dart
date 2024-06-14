@@ -23,6 +23,7 @@ class _ShowsListState extends State<ShowsList> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _cubit.close();
     super.dispose();
   }
 
@@ -37,35 +38,69 @@ class _ShowsListState extends State<ShowsList> {
   Widget build(BuildContext context) {
     return BlocProvider.value(
       value: _cubit,
-      child: BlocBuilder<ShowsListCubit, ShowsListState>(
-        builder: (context, state) {
-          if (state is ShowsListLoaded) {
-            return Padding(
-              padding: const EdgeInsets.only(top: TVMazeSizes.size5),
-              child: GridView.count(
-                controller: _scrollController,
-                crossAxisCount: 2,
-                childAspectRatio: 0.8,
-                mainAxisSpacing: 8,
-                crossAxisSpacing: 8,
-                children: List.generate(state.shows.length, (index) {
-                  final show = state.shows[index];
-                  return ShowItemWidget(
-                    show: show,
-                  );
-                }),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search',
+                    hintStyle: TvMazeTextStyles.subtitle1
+                        .copyWith(color: Colors.white),
+                    prefixIcon: const Icon(Icons.search),
+                  ),
+                  onChanged: _cubit.onSearchChanged,
+                ),
               ),
-            );
-          } else if (state is ShowsListError) {
-            return Center(
-              child: Text(state.message),
-            );
-          }
+              IconButton(
+                icon: const Icon(Icons.sort),
+                onPressed: () {
+                  // TODO: Implement sorting logic
+                },
+              ),
+            ],
+          ),
+          Expanded(
+            child: BlocBuilder<ShowsListCubit, ShowsListState>(
+              builder: (context, state) {
+                if (state is ShowsListLoaded) {
+                  return Padding(
+                    padding: const EdgeInsets.only(top: TVMazeSizes.size5),
+                    child: Column(
+                      children: [
+                        Expanded(
+                          child: GridView.count(
+                            controller: _scrollController,
+                            crossAxisCount: 2,
+                            childAspectRatio: 0.8,
+                            mainAxisSpacing: 8,
+                            crossAxisSpacing: 8,
+                            children:
+                                List.generate(state.shows.length, (index) {
+                              final show = state.shows[index];
+                              return ShowItemWidget(
+                                show: show,
+                              );
+                            }),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                } else if (state is ShowsListError) {
+                  return Center(
+                    child: Text(state.message),
+                  );
+                }
 
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        },
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

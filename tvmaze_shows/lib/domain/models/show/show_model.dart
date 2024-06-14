@@ -10,7 +10,7 @@ part 'show_model.g.dart';
 
 @JsonSerializable()
 class ShowModel {
-  final int id;
+  final int? id;
   final String? url;
   final String? name;
   final String? type;
