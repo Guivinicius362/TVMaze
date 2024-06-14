@@ -18,7 +18,7 @@ class GetSeasonsByShowUseCase {
     final seasons = results[0] as List<SeasonModel>;
     final episodes = results[1] as List<EpisodeModel>;
 
-    final seasonMap = {for (var season in seasons) season.id: season};
+    final seasonMap = {for (var season in seasons) season.number: season};
 
     for (final ep in episodes) {
       final season = seasonMap[ep.season];
