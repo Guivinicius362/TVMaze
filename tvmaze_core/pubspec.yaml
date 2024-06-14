@@ -9,12 +9,14 @@ environment:
 dependencies:
   dio: ^5.4.3+1
   equatable: ^2.0.5
+  expandable: ^5.0.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
   get_it: ^7.7.0
   hive: ^2.2.3
   json_annotation: ^4.9.0
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

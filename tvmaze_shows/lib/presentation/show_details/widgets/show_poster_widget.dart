@@ -42,11 +42,15 @@ class ShowPoster extends StatelessWidget {
           bottom: 24,
           right: 24,
           child: FloatingActionButton(
+            backgroundColor: TvmazeColors.phthaloGreen,
             shape: const CircleBorder(),
             onPressed: () {
               // Handle favorite button press
             },
-            child: const Icon(Icons.favorite),
+            child: const Icon(
+              Icons.favorite_border,
+              color: Colors.white,
+            ),
           ),
         ),
         Positioned(
@@ -66,20 +70,4 @@ class ShowPoster extends StatelessWidget {
       ],
     );
   }
-}
-
-class PosterClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-    path.lineTo(0, size.height - 50);
-    path.quadraticBezierTo(
-        size.width / 2, size.height, size.width, size.height - 50);
-    path.lineTo(size.width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }

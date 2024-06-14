@@ -1,10 +1,10 @@
+import 'package:tvmaze_core/domain/models/links/links_model.dart';
 import 'package:tvmaze_core/tvmaze_core.dart';
 import 'package:tvmaze_shows/domain/models/show/external/external_model.dart';
-import 'package:tvmaze_shows/domain/models/links/links_model.dart';
 import 'package:tvmaze_shows/domain/models/network/network_model.dart';
-import 'package:tvmaze_shows/domain/models/rating/rating_model.dart';
+import 'package:tvmaze_core/domain/models/rating/rating_model.dart';
 import 'package:tvmaze_shows/domain/models/show/schedule/schedule_model.dart';
-import 'package:tvmaze_shows/domain/models/hero_image/image_model.dart';
+import 'package:tvmaze_core/domain/models/hero_image/image_model.dart';
 
 part 'show_model.g.dart';
 

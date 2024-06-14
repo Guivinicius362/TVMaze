@@ -4,8 +4,8 @@ import 'package:tvmaze_design_system/tvmaze_design_system.dart';
 import 'package:tvmaze_shows/presentation/shows_list/bloc/shows_list_cubit.dart';
 import 'package:tvmaze_shows/presentation/shows_list/widgets/show_item_widget.dart';
 
-part 'shows_list.dart';
-part 'favorite_shows_list.dart';
+part 'widgets/shows_list_widget.dart';
+part 'widgets/favorite_shows_list_widget.dart';
 
 class ShowsListPage extends StatefulWidget {
   const ShowsListPage({super.key});

@@ -1,4 +1,4 @@
-part of 'shows_list_page.dart';
+part of '../shows_list_page.dart';
 
 class ShowsList extends StatefulWidget {
   const ShowsList({
@@ -81,7 +81,7 @@ class _ShowsListState extends State<ShowsList> {
                               final show = state.shows[index];
                               return GestureDetector(
                                 onTap: () => Navigator.of(context).pushNamed(
-                                  '/showDetails',
+                                  TvmazeNamedRoutes.showDetails,
                                   arguments: show,
                                 ),
                                 child: ShowItemWidget(

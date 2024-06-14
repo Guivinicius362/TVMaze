@@ -1,8 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:tvmaze_shows/domain/models/hero_image/image_model.dart';
-import 'package:tvmaze_shows/domain/models/links/links_model.dart';
-import 'package:tvmaze_shows/domain/models/rating/rating_model.dart';
-
+import 'package:tvmaze_core/domain/models/hero_image/image_model.dart';
+import 'package:tvmaze_core/domain/models/links/links_model.dart';
+import 'package:tvmaze_core/domain/models/rating/rating_model.dart';
 part 'episode_model.g.dart';
 
 @JsonSerializable()

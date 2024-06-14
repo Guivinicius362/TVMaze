@@ -1,7 +1,7 @@
+import 'package:tvmaze_core/domain/models/episode/episode_model.dart';
 import 'package:tvmaze_core/tvmaze_core.dart';
-import 'package:tvmaze_shows/domain/models/episode/episode_model.dart';
 import 'package:tvmaze_shows/domain/models/season/season_model.dart';
-import 'package:tvmaze_shows/domain/repositories/episode_repository.dart';
+import 'package:tvmaze_core/domain/repositories/episode_repository.dart';
 import 'package:tvmaze_shows/domain/repositories/season_repository.dart';
 
 class GetSeasonsByShowUseCase {

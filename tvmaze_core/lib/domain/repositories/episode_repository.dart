@@ -1,6 +1,6 @@
+import 'package:tvmaze_core/domain/models/episode/episode_model.dart';
 import 'package:tvmaze_core/tvmaze_core.dart';
-import 'package:tvmaze_shows/data/remote_data_sources/remote_episode_data_source.dart';
-import 'package:tvmaze_shows/domain/models/episode/episode_model.dart';
+import 'package:tvmaze_core/data/remote_data_sourcers/remote_episode_data_source.dart';
 
 abstract class EpisodeRepository {
   Future<List<EpisodeModel>> getEpisodes(int showId);

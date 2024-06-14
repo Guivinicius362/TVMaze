@@ -1,6 +1,5 @@
+import 'package:tvmaze_core/domain/models/links/link_model.dart';
 import 'package:tvmaze_core/tvmaze_core.dart';
-import 'package:tvmaze_shows/domain/models/links/link_model.dart';
-
 part 'links_model.g.dart';
 
 @JsonSerializable()

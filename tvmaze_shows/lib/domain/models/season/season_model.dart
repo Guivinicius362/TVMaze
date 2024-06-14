@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:tvmaze_shows/domain/models/episode/episode_model.dart';
-import 'package:tvmaze_shows/domain/models/hero_image/image_model.dart';
-import 'package:tvmaze_shows/domain/models/links/links_model.dart';
+import 'package:tvmaze_core/domain/models/episode/episode_model.dart';
+import 'package:tvmaze_core/domain/models/hero_image/image_model.dart';
+import 'package:tvmaze_core/domain/models/links/links_model.dart';
 import 'package:tvmaze_shows/domain/models/network/network_model.dart';
 
 part 'season_model.g.dart';

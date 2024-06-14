@@ -1,8 +1,6 @@
 import 'package:tvmaze_core/tvmaze_core.dart';
-import 'package:tvmaze_shows/data/remote_data_sources/remote_episode_data_source.dart';
 import 'package:tvmaze_shows/data/remote_data_sources/remote_season_data_source.dart';
 import 'package:tvmaze_shows/data/remote_data_sources/remote_show_data_source.dart';
-import 'package:tvmaze_shows/domain/repositories/episode_repository.dart';
 import 'package:tvmaze_shows/domain/repositories/season_repository.dart';
 import 'package:tvmaze_shows/domain/repositories/show_repository.dart';
 import 'package:tvmaze_shows/domain/use_cases/get_seasons_by_show_use_case.dart';
@@ -26,9 +24,7 @@ void initShowsDependencies() {
 void _initDataSources() {
   _getIt
       .registerFactory<RemoteShowDataSource>(() => RemoteShowDataSourceImpl());
-  _getIt.registerFactory<RemoteEpisodeDataSource>(
-    () => RemoteEpisodeDataSourceImpl(),
-  );
+
   _getIt.registerFactory<RemoteSeasonDataSource>(
     () => RemoteSeasonDataSourceImpl(),
   );
@@ -36,7 +32,6 @@ void _initDataSources() {
 
 void _initRepositories() {
   _getIt.registerFactory<ShowRepository>(() => ShowRepositoryImpl());
-  _getIt.registerFactory<EpisodeRepository>(() => EpisodeRepositoryImpl());
   _getIt.registerFactory<SeasonRepository>(() => SeasonRepositoryImpl());
 }
 

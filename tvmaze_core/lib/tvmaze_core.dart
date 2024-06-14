@@ -4,3 +4,6 @@ export 'package:get_it/get_it.dart';
 export 'package:hive/hive.dart';
 export 'package:json_annotation/json_annotation.dart';
 export 'package:dio/dio.dart';
+export 'package:expandable/expandable.dart';
+export 'package:shimmer/shimmer.dart';
+export 'package:tvmaze_core/tvmaze_named_routes.dart';
