@@ -6,12 +6,12 @@ part of 'image_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ShowImage _$ShowImageFromJson(Map<String, dynamic> json) => ShowImage(
+HeroImage _$HeroImageFromJson(Map<String, dynamic> json) => HeroImage(
       medium: json['medium'] as String,
       original: json['original'] as String,
     );
 
-Map<String, dynamic> _$ShowImageToJson(ShowImage instance) => <String, dynamic>{
+Map<String, dynamic> _$HeroImageToJson(HeroImage instance) => <String, dynamic>{
       'medium': instance.medium,
       'original': instance.original,
     };

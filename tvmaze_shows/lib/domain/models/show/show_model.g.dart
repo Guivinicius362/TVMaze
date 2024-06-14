@@ -35,7 +35,7 @@ ShowModel _$ShowModelFromJson(Map<String, dynamic> json) => ShowModel(
           : Externals.fromJson(json['externals'] as Map<String, dynamic>),
       image: json['image'] == null
           ? null
-          : ShowImage.fromJson(json['image'] as Map<String, dynamic>),
+          : HeroImage.fromJson(json['image'] as Map<String, dynamic>),
       summary: json['summary'] as String?,
       updated: (json['updated'] as num?)?.toInt(),
       links: json['links'] == null

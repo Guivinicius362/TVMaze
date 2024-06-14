@@ -1,5 +1,5 @@
 import 'package:tvmaze_core/tvmaze_core.dart';
-import 'package:tvmaze_shows/domain/models/show/country/country_model.dart';
+import 'package:tvmaze_shows/domain/models/country/country_model.dart';
 
 part 'network_model.g.dart';
 

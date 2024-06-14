@@ -79,8 +79,14 @@ class _ShowsListState extends State<ShowsList> {
                             children:
                                 List.generate(state.shows.length, (index) {
                               final show = state.shows[index];
-                              return ShowItemWidget(
-                                show: show,
+                              return GestureDetector(
+                                onTap: () => Navigator.of(context).pushNamed(
+                                  '/showDetails',
+                                  arguments: show,
+                                ),
+                                child: ShowItemWidget(
+                                  show: show,
+                                ),
                               );
                             }),
                           ),

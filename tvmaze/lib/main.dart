@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tvmaze/routes.dart';
 import 'package:tvmaze_core/di.dart';
 import 'package:tvmaze_shows/tvmaze_shows.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const ShowsListPage(),
+      routes: TVMazeRoutes().routes,
     );
   }
 }
