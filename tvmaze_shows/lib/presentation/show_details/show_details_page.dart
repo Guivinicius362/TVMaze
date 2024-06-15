@@ -21,18 +21,43 @@ class ShowDetailsPage extends StatelessWidget {
     final show = ModalRoute.of(context)!.settings.arguments as ShowModel;
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ClippedImage(
-              imageURL: show.image!.original,
-              title: show.name ?? '',
-            ),
-            ShowExpandableDataWidget(show: show),
-            BlocProvider(
-              create: (context) =>
-                  GetIt.instance<ShowDetailsCubit>()..init(show),
-              child: BlocBuilder<ShowDetailsCubit, ShowDetailsState>(
+      body: BlocProvider(
+        create: (context) => GetIt.instance<ShowDetailsCubit>()..init(show),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              ClippedImage(
+                imageURL: show.image!.original,
+                title: show.name ?? '',
+                bottomLeftWidget: Positioned(
+                  bottom: TVMazeSizes.size6,
+                  right: TVMazeSizes.size6,
+                  child: BlocBuilder<ShowDetailsCubit, ShowDetailsState>(
+                    builder: (context, state) {
+                      if (state is ShowDetailsLoaded) {
+                        return FloatingActionButton(
+                          backgroundColor: TVMazeColors.phthaloGreen,
+                          shape: const CircleBorder(),
+                          onPressed: () {
+                            context
+                                .read<ShowDetailsCubit>()
+                                .toggleFavorite(show);
+                          },
+                          child: Icon(
+                            state.isFavorite
+                                ? Icons.favorite
+                                : Icons.favorite_border,
+                            color: Colors.white,
+                          ),
+                        );
+                      }
+                      return const SizedBox();
+                    },
+                  ),
+                ),
+              ),
+              ShowExpandableDataWidget(show: show),
+              BlocBuilder<ShowDetailsCubit, ShowDetailsState>(
                 builder: (context, state) {
                   if (state is ShowDetailsLoading) {
                     return const CircularProgressIndicator();
@@ -63,8 +88,8 @@ class ShowDetailsPage extends StatelessWidget {
                   }
                 },
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

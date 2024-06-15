@@ -22,25 +22,29 @@ class ShowDetailsLoaded extends ShowDetailsState {
   final ShowModel show;
   final List<SeasonModel> seasons;
   final int selectedSeasonIndex;
+  final bool isFavorite;
 
   const ShowDetailsLoaded({
     required this.show,
     required this.seasons,
+    required this.isFavorite,
     this.selectedSeasonIndex = 0,
   });
 
   @override
-  List<Object> get props => [show, seasons, selectedSeasonIndex];
+  List<Object> get props => [show, seasons, selectedSeasonIndex, isFavorite];
 
   ShowDetailsLoaded copyWith({
     ShowModel? show,
     List<SeasonModel>? seasons,
     int? selectedSeasonIndex,
+    bool? isFavorite,
   }) {
     return ShowDetailsLoaded(
       show: show ?? this.show,
       seasons: seasons ?? this.seasons,
       selectedSeasonIndex: selectedSeasonIndex ?? this.selectedSeasonIndex,
+      isFavorite: isFavorite ?? this.isFavorite,
     );
   }
 }

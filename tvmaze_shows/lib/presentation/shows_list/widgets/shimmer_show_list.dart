@@ -1,4 +1,4 @@
-part of '../shows_list_page.dart';
+part of '../shows_list.dart';
 
 class ShimmerShowList extends StatelessWidget {
   const ShimmerShowList({

@@ -1,13 +1,16 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
-import 'package:tvmaze_core/tvmaze_core.dart';
-import 'package:tvmaze_design_system/tvmaze_design_system.dart';
-import 'package:tvmaze_shows/domain/models/show/show_model.dart';
+part of '../shows_list.dart';
+
+enum ShowsListType {
+  all,
+  favorites,
+}
 
 class ShowItemWidget extends StatelessWidget {
-  const ShowItemWidget({super.key, required this.show});
+  const ShowItemWidget(
+      {super.key, required this.show, this.type = ShowsListType.all});
 
   final ShowModel show;
+  final ShowsListType type;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class ShowItemWidget extends StatelessWidget {
       ),
       child: show.image != null
           ? Hero(
-              tag: show.image!.original,
+              tag: '${show.image!.original}$type',
               child: FittedBox(
                 fit: BoxFit.contain,
                 child: CachedNetworkImage(

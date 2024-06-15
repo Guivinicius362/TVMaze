@@ -8,10 +8,12 @@ class ClippedImage extends StatelessWidget {
     super.key,
     required this.imageURL,
     required this.title,
+    this.bottomLeftWidget,
   });
 
   final String imageURL;
   final String title;
+  final Widget? bottomLeftWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -44,21 +46,7 @@ class ClippedImage extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          bottom: TVMazeSizes.size6,
-          right: TVMazeSizes.size6,
-          child: FloatingActionButton(
-            backgroundColor: TVMazeColors.phthaloGreen,
-            shape: const CircleBorder(),
-            onPressed: () {
-              // Handle favorite button press
-            },
-            child: const Icon(
-              Icons.favorite_border,
-              color: Colors.white,
-            ),
-          ),
-        ),
+        if (bottomLeftWidget != null) bottomLeftWidget!,
         Positioned(
           top: TVMazeSizes.size6,
           left: TVMazeSizes.size6,

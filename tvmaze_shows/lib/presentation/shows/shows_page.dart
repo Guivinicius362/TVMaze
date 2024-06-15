@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:tvmaze_core/tvmaze_core.dart';
 import 'package:tvmaze_design_system/tvmaze_design_system.dart';
-import 'package:tvmaze_shows/presentation/shows_list/bloc/shows_list_cubit.dart';
-import 'package:tvmaze_shows/presentation/shows_list/widgets/show_item_widget.dart';
+import 'package:tvmaze_shows/presentation/favorite_shows_list/favorite_shows_list_widget.dart';
+import 'package:tvmaze_shows/presentation/shows_list/shows_list.dart';
 
-part 'widgets/shows_list_widget.dart';
-part 'widgets/favorite_shows_list_widget.dart';
-part 'widgets/shimmer_show_list.dart';
-
-class ShowsListPage extends StatefulWidget {
-  const ShowsListPage({super.key});
+class ShowsPage extends StatefulWidget {
+  const ShowsPage({super.key});
 
   @override
-  State<ShowsListPage> createState() => _ShowsListPageState();
+  State<ShowsPage> createState() => _ShowsPageState();
 }
 
-class _ShowsListPageState extends State<ShowsListPage>
+class _ShowsPageState extends State<ShowsPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
@@ -23,13 +19,6 @@ class _ShowsListPageState extends State<ShowsListPage>
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
-    // _tabController.addListener(() {
-    //   if (_tabController.indexIsChanging) {
-    //     if (_tabController.index == 0) {
-    //     } else {
-    //     }
-    //   }
-    // });
   }
 
   @override
@@ -86,7 +75,13 @@ class _ShowsListPageState extends State<ShowsListPage>
           ),
         ),
       ),
-      body: const ShowsList(),
+      body: TabBarView(
+        controller: _tabController,
+        children: const [
+          ShowsList(),
+          FavoriteShowsList(),
+        ],
+      ),
     );
   }
 }

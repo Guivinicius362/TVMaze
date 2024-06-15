@@ -1,5 +1,5 @@
 class TVMazeNamedRoutes {
-  static const String showsList = '/showsList';
+  static const String shows = '/shows';
   static const String showDetails = '/showDetails';
   static const String episodeDetails = '/episodeDetails';
 }

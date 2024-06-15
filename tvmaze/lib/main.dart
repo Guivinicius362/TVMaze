@@ -8,7 +8,7 @@ import 'package:tvmaze_shows/tvmaze_shows.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initCoreDependencies();
-  initShowsDependencies();
+  await initShowsDependencies();
   runApp(const MyApp());
 }
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const ShowsListPage(),
+      home: const ShowsPage(),
       routes: TVMazeRoutes().routes,
     );
   }
