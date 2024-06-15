@@ -1,0 +1,21 @@
+{
+    "appTitle": "TV Maze",
+    "search": "Pesquisar",
+    "shows": "Programas",
+    "favorites": "Favoritos",
+    "seasons": "Temporadas",
+    "episodes": "Episódios",
+    "airsOn": "Transmitido em",
+    "runtime": "Duração",
+    "status": "Status",
+    "genres": "Gêneros",
+    "premiered": "Estreou",
+    "schedule": "Agenda",
+    "rating": "Classificação",
+    "summary": "Resumo",
+    "noSummary": "Nenhum resumo disponível",
+    "noEpisodes": "Nenhum episódio disponível",
+    "language": "Idioma",
+    "seeMore": "Ver mais",
+    "seeLess": "Ver menos"
+}

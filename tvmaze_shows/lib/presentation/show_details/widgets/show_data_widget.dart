@@ -19,14 +19,14 @@ class ShowData extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Airs on: ${show.schedule?.days} at ${show.schedule?.time}',
+                '${AppLocalizations.of(context)?.airsOn}: ${show.schedule?.days} at ${show.schedule?.time}',
                 style: TVMazeTextStyles.caption,
               ),
               const SizedBox(
                 height: TVMazeSizes.size3,
               ),
               Text(
-                'Runtime: ${show.runtime} minutes',
+                '${AppLocalizations.of(context)?.runtime}: ${show.runtime} minutes',
                 style: TVMazeTextStyles.caption,
               ),
             ],
@@ -38,14 +38,14 @@ class ShowData extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Status: ${show.status} ',
+                '${AppLocalizations.of(context)?.status} ${show.status} ',
                 style: TVMazeTextStyles.caption,
               ),
               const SizedBox(
                 height: TVMazeSizes.size3,
               ),
               Text(
-                'Language: ${show.language}',
+                '${AppLocalizations.of(context)?.language}: ${show.language}',
                 style: TVMazeTextStyles.caption,
               ),
             ],

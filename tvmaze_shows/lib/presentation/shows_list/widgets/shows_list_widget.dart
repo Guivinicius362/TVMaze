@@ -46,7 +46,7 @@ class _ShowsListState extends State<ShowsList> {
             child: Expanded(
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: 'Search',
+                  hintText: AppLocalizations.of(context)?.search,
                   hintStyle:
                       TVMazeTextStyles.subtitle1.copyWith(color: Colors.white),
                   prefixIcon: const Padding(
@@ -63,38 +63,7 @@ class _ShowsListState extends State<ShowsList> {
             child: BlocBuilder<ShowsListCubit, ShowsListState>(
               builder: (context, state) {
                 if (state is ShowsListLoading) {
-                  return Padding(
-                    padding: const EdgeInsets.only(top: TVMazeSizes.size5),
-                    child: Column(
-                      children: [
-                        Expanded(
-                          child: GridView.count(
-                            controller: _scrollController,
-                            crossAxisCount: 2,
-                            childAspectRatio: 0.8,
-                            mainAxisSpacing: TVMazeSizes.size3,
-                            crossAxisSpacing: TVMazeSizes.size3,
-                            children: List.generate(10, (index) {
-                              return Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: TVMazeSizes.size3),
-                                child: Shimmer.fromColors(
-                                  baseColor: TVMazeColors.baseShimmerColor,
-                                  highlightColor:
-                                      TVMazeColors.highlightShimmerColor,
-                                  child: Container(
-                                    decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
+                  return const ShimmerShowList();
                 }
 
                 if (state is ShowsListLoaded) {

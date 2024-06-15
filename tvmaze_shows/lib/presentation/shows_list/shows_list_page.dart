@@ -6,6 +6,7 @@ import 'package:tvmaze_shows/presentation/shows_list/widgets/show_item_widget.da
 
 part 'widgets/shows_list_widget.dart';
 part 'widgets/favorite_shows_list_widget.dart';
+part 'widgets/shimmer_show_list.dart';
 
 class ShowsListPage extends StatefulWidget {
   const ShowsListPage({super.key});
@@ -44,7 +45,7 @@ class _ShowsListPageState extends State<ShowsListPage>
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text(
-          AppLocalizations.of(context)?.helloWorld ?? 'failed',
+          AppLocalizations.of(context)!.appTitle,
           style: TVMazeTextStyles.heading6.copyWith(
             color: TVMazeColors.phthaloGreen,
           ),
@@ -62,12 +63,12 @@ class _ShowsListPageState extends State<ShowsListPage>
               labelStyle: TVMazeTextStyles.subtitle1.copyWith(
                 color: TVMazeColors.phthaloGreen,
               ),
-              tabs: const [
+              tabs: [
                 Tab(
                   child: SizedBox(
                     width: 150, // Adjust this value as needed
                     child: Center(
-                      child: Text('Shows'),
+                      child: Text(AppLocalizations.of(context)?.shows ?? ''),
                     ),
                   ),
                 ),
@@ -75,7 +76,8 @@ class _ShowsListPageState extends State<ShowsListPage>
                   child: SizedBox(
                     width: 150, // Adjust this value as needed
                     child: Center(
-                      child: Text('Favorites Show'),
+                      child:
+                          Text(AppLocalizations.of(context)?.favorites ?? ''),
                     ),
                   ),
                 ),

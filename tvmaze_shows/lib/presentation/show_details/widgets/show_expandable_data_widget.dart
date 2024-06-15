@@ -44,7 +44,10 @@ class _ShowExpandableDataWidgetState extends State<ShowExpandableDataWidget> {
             left: 0,
             right: 0,
             child: TextButton(
-              child: const Text('See more', style: TVMazeTextStyles.caption),
+              child: Text(
+                AppLocalizations.of(context)!.seemore,
+                style: TVMazeTextStyles.caption,
+              ),
               onPressed: () => _controller.toggle(),
             ),
           ),
@@ -56,7 +59,10 @@ class _ShowExpandableDataWidgetState extends State<ShowExpandableDataWidget> {
             children: _buildContent(show),
           ),
           TextButton(
-            child: const Text('See less', style: TVMazeTextStyles.caption),
+            child: Text(
+              AppLocalizations.of(context)!.seeLess,
+              style: TVMazeTextStyles.caption,
+            ),
             onPressed: () => _controller.toggle(),
           ),
         ],
@@ -74,6 +80,9 @@ class _ShowExpandableDataWidgetState extends State<ShowExpandableDataWidget> {
             return Chip(
               label: Text(
                 genre,
+                style: TVMazeTextStyles.caption.copyWith(
+                  color: Colors.black,
+                ),
               ),
             );
           }).toList(),

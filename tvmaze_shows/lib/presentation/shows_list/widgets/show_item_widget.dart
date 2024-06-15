@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:tvmaze_core/tvmaze_core.dart';
+import 'package:tvmaze_design_system/tvmaze_design_system.dart';
 import 'package:tvmaze_shows/domain/models/show/show_model.dart';
 
 class ShowItemWidget extends StatelessWidget {
@@ -16,6 +17,7 @@ class ShowItemWidget extends StatelessWidget {
         title: Text(
           show.name ?? 'unknown',
           textAlign: TextAlign.center,
+          style: TVMazeTextStyles.subtitle1,
         ),
       ),
       child: show.image != null

@@ -7,6 +7,7 @@ import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_en.dart';
 import 'app_localizations_es.dart';
+import 'app_localizations_pt.dart';
 
 /// Callers can lookup localized strings with an instance of AppLocalizations
 /// returned by `AppLocalizations.of(context)`.
@@ -90,14 +91,123 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
-    Locale('es')
+    Locale('es'),
+    Locale('pt')
   ];
 
-  /// The conventional newborn programmer greeting
+  /// The title of the application
   ///
   /// In en, this message translates to:
-  /// **'Hello World!'**
-  String get helloWorld;
+  /// **'TV Maze'**
+  String get appTitle;
+
+  /// The search button text
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
+
+  /// The shows title
+  ///
+  /// In en, this message translates to:
+  /// **'Shows'**
+  String get shows;
+
+  /// The favorites title
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get favorites;
+
+  /// The seasons title
+  ///
+  /// In en, this message translates to:
+  /// **'Seasons'**
+  String get seasons;
+
+  /// The episodes title
+  ///
+  /// In en, this message translates to:
+  /// **'Episodes'**
+  String get episodes;
+
+  /// The airs on label
+  ///
+  /// In en, this message translates to:
+  /// **'Airs on'**
+  String get airsOn;
+
+  /// The runtime label
+  ///
+  /// In en, this message translates to:
+  /// **'Runtime'**
+  String get runtime;
+
+  /// The status label
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get status;
+
+  /// The genres label
+  ///
+  /// In en, this message translates to:
+  /// **'Genres'**
+  String get genres;
+
+  /// The premiered label
+  ///
+  /// In en, this message translates to:
+  /// **'Premiered'**
+  String get premiered;
+
+  /// The schedule label
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule'**
+  String get schedule;
+
+  /// The rating label
+  ///
+  /// In en, this message translates to:
+  /// **'Rating'**
+  String get rating;
+
+  /// The summary label
+  ///
+  /// In en, this message translates to:
+  /// **'Summary'**
+  String get summary;
+
+  /// The no summary available label
+  ///
+  /// In en, this message translates to:
+  /// **'No summary available'**
+  String get noSummary;
+
+  /// The no episodes available label
+  ///
+  /// In en, this message translates to:
+  /// **'No episodes available'**
+  String get noEpisodes;
+
+  /// The language label
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// The see more label
+  ///
+  /// In en, this message translates to:
+  /// **'See more'**
+  String get seemore;
+
+  /// The see less label
+  ///
+  /// In en, this message translates to:
+  /// **'See less'**
+  String get seeLess;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
@@ -109,7 +219,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'es'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'es', 'pt'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -122,6 +232,7 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
   switch (locale.languageCode) {
     case 'en': return AppLocalizationsEn();
     case 'es': return AppLocalizationsEs();
+    case 'pt': return AppLocalizationsPt();
   }
 
   throw FlutterError(

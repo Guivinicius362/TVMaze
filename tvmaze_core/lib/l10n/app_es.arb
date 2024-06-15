@@ -1,3 +1,21 @@
 {
-    "helloWorld": "¡Hola Mundo!"
+    "appTitle": "TV Maze",
+    "search": "Buscar",
+    "shows": "Espectáculos",
+    "favorites": "Favoritos",
+    "seasons": "Temporadas",
+    "episodes": "Episodios",
+    "airsOn": "Se emite en",
+    "runtime": "Duración",
+    "status": "Estado",
+    "genres": "Géneros",
+    "premiered": "Estrenado",
+    "schedule": "Horario",
+    "rating": "Calificación",
+    "summary": "Resumen",
+    "noSummary": "No hay resumen disponible",
+    "noEpisodes": "No hay episodios disponibles",
+    "language": "Idioma",
+    "seeMore": "Ver más",
+    "seeLess": "Ver menos"
 }

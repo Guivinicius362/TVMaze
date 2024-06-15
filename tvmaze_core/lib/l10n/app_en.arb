@@ -1,6 +1,78 @@
 {
-  "helloWorld": "Hello World!",
-  "@helloWorld": {
-    "description": "The conventional newborn programmer greeting"
+  "appTitle": "TV Maze",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "The search button text"
+  },
+  "shows": "Shows",
+  "@shows": {
+    "description": "The shows title"
+  },
+  "favorites": "Favorites",
+  "@favorites": {
+    "description": "The favorites title"
+  },
+  "seasons": "Seasons",
+  "@seasons": {
+    "description": "The seasons title"
+  },
+  "episodes": "Episodes",
+  "@episodes": {
+    "description": "The episodes title"
+  },
+  "airsOn": "Airs on",
+  "@airsOn": {
+    "description": "The airs on label"
+  },
+  "runtime": "Runtime",
+  "@runtime": {
+    "description": "The runtime label"
+  },
+  "status": "Status",
+  "@status": {
+    "description": "The status label"
+  },
+  "genres": "Genres",
+  "@genres": {
+    "description": "The genres label"
+  },
+  "premiered": "Premiered",
+  "@premiered": {
+    "description": "The premiered label"
+  },
+  "schedule": "Schedule",
+  "@schedule": {
+    "description": "The schedule label"
+  },
+  "rating": "Rating",
+  "@rating": {
+    "description": "The rating label"
+  },
+  "summary": "Summary",
+  "@summary": {
+    "description": "The summary label"
+  },
+  "noSummary": "No summary available",
+  "@noSummary": {
+    "description": "The no summary available label"
+  },
+  "noEpisodes": "No episodes available",
+  "@noEpisodes": {
+    "description": "The no episodes available label"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "The language label"
+  },
+  "seemore": "See more",
+  "@seemore": {
+    "description": "The see more label"
+  },
+  "seeLess": "See less",
+  "@seeLess": {
+    "description": "The see less label"
   }
 }
