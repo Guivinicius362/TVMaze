@@ -3,8 +3,11 @@ import 'package:tvmaze_core/tvmaze_core.dart';
 part 'links_model.g.dart';
 
 @JsonSerializable()
+@HiveType(typeId: TVMazeHiveKeys.linksTypeId)
 class Links {
+  @HiveField(0)
   final Link self;
+  @HiveField(1)
   final Link? previousepisode;
 
   Links({required this.self, this.previousepisode});

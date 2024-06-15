@@ -2,10 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:tvmaze_core/data/remote_data_sourcers/remote_episode_data_source.dart';
 import 'package:tvmaze_core/domain/repositories/episode_repository.dart';
+import 'package:tvmaze_core/hive/tvmaze_hive.dart';
 
 final _getIt = GetIt.instance;
 
-void initCoreDependencies() {
+Future<void> initCoreDependencies() async {
+  await initHive();
   final dio = Dio(
     BaseOptions(
       baseUrl: 'https://api.tvmaze.com',

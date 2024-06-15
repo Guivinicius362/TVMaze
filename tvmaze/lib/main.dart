@@ -5,8 +5,9 @@ import 'package:tvmaze_core/tvmaze_core.dart';
 import 'package:tvmaze_design_system/tvmaze_design_system.dart';
 import 'package:tvmaze_shows/tvmaze_shows.dart';
 
-void main() {
-  initCoreDependencies();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initCoreDependencies();
   initShowsDependencies();
   runApp(const MyApp());
 }

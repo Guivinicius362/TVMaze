@@ -3,6 +3,104 @@
 part of 'show_model.dart';
 
 // **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class ShowModelAdapter extends TypeAdapter<ShowModel> {
+  @override
+  final int typeId = 7;
+
+  @override
+  ShowModel read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return ShowModel(
+      id: fields[0] as int?,
+      url: fields[1] as String?,
+      name: fields[2] as String?,
+      type: fields[3] as String?,
+      language: fields[4] as String?,
+      genres: (fields[5] as List?)?.cast<String>(),
+      status: fields[6] as String?,
+      runtime: fields[7] as int?,
+      averageRuntime: fields[8] as int?,
+      premiered: fields[9] as String?,
+      ended: fields[10] as String?,
+      officialSite: fields[11] as String?,
+      schedule: fields[12] as Schedule?,
+      rating: fields[13] as Rating?,
+      weight: fields[14] as int?,
+      network: fields[15] as Network?,
+      externals: fields[16] as Externals?,
+      image: fields[17] as HeroImage?,
+      summary: fields[18] as String?,
+      updated: fields[19] as int?,
+      links: fields[20] as Links?,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, ShowModel obj) {
+    writer
+      ..writeByte(21)
+      ..writeByte(0)
+      ..write(obj.id)
+      ..writeByte(1)
+      ..write(obj.url)
+      ..writeByte(2)
+      ..write(obj.name)
+      ..writeByte(3)
+      ..write(obj.type)
+      ..writeByte(4)
+      ..write(obj.language)
+      ..writeByte(5)
+      ..write(obj.genres)
+      ..writeByte(6)
+      ..write(obj.status)
+      ..writeByte(7)
+      ..write(obj.runtime)
+      ..writeByte(8)
+      ..write(obj.averageRuntime)
+      ..writeByte(9)
+      ..write(obj.premiered)
+      ..writeByte(10)
+      ..write(obj.ended)
+      ..writeByte(11)
+      ..write(obj.officialSite)
+      ..writeByte(12)
+      ..write(obj.schedule)
+      ..writeByte(13)
+      ..write(obj.rating)
+      ..writeByte(14)
+      ..write(obj.weight)
+      ..writeByte(15)
+      ..write(obj.network)
+      ..writeByte(16)
+      ..write(obj.externals)
+      ..writeByte(17)
+      ..write(obj.image)
+      ..writeByte(18)
+      ..write(obj.summary)
+      ..writeByte(19)
+      ..write(obj.updated)
+      ..writeByte(20)
+      ..write(obj.links);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ShowModelAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

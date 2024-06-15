@@ -4,10 +4,15 @@ import 'package:tvmaze_shows/domain/models/country/country_model.dart';
 part 'network_model.g.dart';
 
 @JsonSerializable()
+@HiveType(typeId: TVMazeHiveKeys.networkTypeId)
 class Network {
+  @HiveField(0)
   final int id;
+  @HiveField(1)
   final String name;
+  @HiveField(2)
   final Country country;
+  @HiveField(3)
   final String? officialSite;
 
   Network({

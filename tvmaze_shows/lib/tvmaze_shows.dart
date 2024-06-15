@@ -1,6 +1,12 @@
 import 'package:tvmaze_core/tvmaze_core.dart';
 import 'package:tvmaze_shows/data/remote_data_sources/remote_season_data_source.dart';
 import 'package:tvmaze_shows/data/remote_data_sources/remote_show_data_source.dart';
+import 'package:tvmaze_shows/domain/models/country/country_model.dart';
+import 'package:tvmaze_shows/domain/models/network/network_model.dart';
+import 'package:tvmaze_shows/domain/models/season/season_model.dart';
+import 'package:tvmaze_shows/domain/models/show/external/external_model.dart';
+import 'package:tvmaze_shows/domain/models/show/schedule/schedule_model.dart';
+import 'package:tvmaze_shows/domain/models/show/show_model.dart';
 import 'package:tvmaze_shows/domain/repositories/season_repository.dart';
 import 'package:tvmaze_shows/domain/repositories/show_repository.dart';
 import 'package:tvmaze_shows/domain/use_cases/get_seasons_by_show_use_case.dart';
@@ -15,10 +21,22 @@ export 'package:tvmaze_shows/presentation/show_details/show_details_page.dart';
 final _getIt = GetIt.instance;
 
 void initShowsDependencies() {
+  _initHive();
   _initDataSources();
   _initRepositories();
   _initUseCases();
   _initBlocs();
+}
+
+void _initHive() {
+  Hive
+    ..registerAdapter(ShowModelAdapter())
+    ..registerAdapter(NetworkAdapter())
+    ..registerAdapter(ScheduleAdapter())
+    ..registerAdapter(SeasonModelAdapter())
+    ..registerAdapter(CountryAdapter())
+    ..registerAdapter(ExternalsAdapter());
+  Hive.openBox<ShowModel>(TVMazeHiveKeys.favoriteShowsBoxName);
 }
 
 void _initDataSources() {
