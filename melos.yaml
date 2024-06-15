@@ -5,3 +5,4 @@ packages:
   - tvmaze_core/
   - tvmaze_design_system/
   - tvmaze_shows/
+  - tvmaze_episodes/

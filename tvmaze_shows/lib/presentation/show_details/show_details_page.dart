@@ -1,16 +1,13 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:tvmaze_core/domain/models/episode/episode_model.dart';
 import 'package:tvmaze_core/tvmaze_core.dart';
 import 'package:tvmaze_design_system/tvmaze_design_system.dart';
-import 'package:tvmaze_design_system/widgets/poster_clipper.dart';
+import 'package:tvmaze_design_system/widgets/clipped_image_widget.dart';
 import 'package:tvmaze_shows/domain/models/season/season_model.dart';
 import 'package:tvmaze_shows/domain/models/show/show_model.dart';
 import 'package:tvmaze_shows/presentation/show_details/bloc/show_details_cubit.dart';
 
 part './widgets/show_data_widget.dart';
-part './widgets/show_poster_widget.dart';
 part './widgets/show_season_list_widget.dart';
 part './widgets/show_episode_list_widget.dart';
 part './widgets/show_episode_widget.dart';
@@ -27,7 +24,10 @@ class ShowDetailsPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ShowPoster(show: show),
+            ClippedImage(
+              imageURL: show.image!.original,
+              title: show.name ?? '',
+            ),
             ShowExpandableDataWidget(show: show),
             BlocProvider(
               create: (context) =>

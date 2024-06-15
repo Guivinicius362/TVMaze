@@ -81,7 +81,7 @@ class _ShowsListState extends State<ShowsList> {
                               final show = state.shows[index];
                               return GestureDetector(
                                 onTap: () => Navigator.of(context).pushNamed(
-                                  TvmazeNamedRoutes.showDetails,
+                                  TVMazeNamedRoutes.showDetails,
                                   arguments: show,
                                 ),
                                 child: ShowItemWidget(

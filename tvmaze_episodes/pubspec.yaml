@@ -1,15 +1,19 @@
 name: tvmaze_episodes
 description: "A new Flutter package project."
 version: 0.0.1
-homepage:
+publish_to: none
 
 environment:
-  sdk: '>=3.4.3 <4.0.0'
+  sdk: ">=3.4.3 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  tvmaze_core:
+    path: ../tvmaze_core
+  tvmaze_design_system:
+    path: ../tvmaze_design_system
 
 dev_dependencies:
   flutter_test:

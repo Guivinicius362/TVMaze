@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: tvmaze_core
+dependency_overrides:
+  tvmaze_core:
+    path: ../tvmaze_core

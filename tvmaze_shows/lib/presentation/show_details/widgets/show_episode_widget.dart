@@ -11,6 +11,12 @@ class ShowEpisodeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushNamed(
+          TVMazeNamedRoutes.episodeDetails,
+          arguments: episode,
+        );
+      },
       child: Card(
         color: Colors.black,
         child: Stack(
@@ -18,19 +24,22 @@ class ShowEpisodeWidget extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               key: ValueKey(episode.image?.original),
-              child: CachedNetworkImage(
-                imageUrl: episode.image?.original ?? '',
-                progressIndicatorBuilder: (context, url, progress) {
-                  return Shimmer.fromColors(
-                    baseColor: Colors.grey[300]!,
-                    highlightColor: Colors.grey[100]!,
-                    child: Container(
-                      width: double.infinity,
-                      height: 220,
-                      color: Colors.white,
-                    ),
-                  );
-                },
+              child: Hero(
+                tag: episode.image?.original ?? '',
+                child: CachedNetworkImage(
+                  imageUrl: episode.image?.original ?? '',
+                  progressIndicatorBuilder: (context, url, progress) {
+                    return Shimmer.fromColors(
+                      baseColor: Colors.grey[300]!,
+                      highlightColor: Colors.grey[100]!,
+                      child: Container(
+                        width: double.infinity,
+                        height: 220,
+                        color: Colors.white,
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             Positioned(

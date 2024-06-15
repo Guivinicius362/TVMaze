@@ -1,12 +1,17 @@
-part of '../show_details_page.dart';
+import 'package:flutter/material.dart';
+import 'package:tvmaze_core/tvmaze_core.dart';
+import 'package:tvmaze_design_system/tvmaze_design_system.dart';
+import 'package:tvmaze_design_system/widgets/poster_clipper.dart';
 
-class ShowPoster extends StatelessWidget {
-  const ShowPoster({
+class ClippedImage extends StatelessWidget {
+  const ClippedImage({
     super.key,
-    required this.show,
+    required this.imageURL,
+    required this.title,
   });
 
-  final ShowModel show;
+  final String imageURL;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +20,11 @@ class ShowPoster extends StatelessWidget {
         ClipPath(
           clipper: PosterClipper(),
           child: Hero(
-            tag: show.id ?? 0,
+            tag: imageURL,
             child: FittedBox(
               fit: BoxFit.contain,
               child: CachedNetworkImage(
-                imageUrl: show.image!.original,
+                imageUrl: imageURL,
               ),
             ),
           ),
@@ -29,7 +34,7 @@ class ShowPoster extends StatelessWidget {
           left: 0,
           right: 0,
           child: Text(
-            show.name ?? '',
+            title,
             textAlign: TextAlign.center,
             style: const TextStyle(
               color: Colors.white,

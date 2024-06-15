@@ -19,7 +19,7 @@ class ShowItemWidget extends StatelessWidget {
       ),
       child: show.image != null
           ? Hero(
-              tag: show.id ?? 0,
+              tag: show.image!.original,
               child: FittedBox(
                 fit: BoxFit.contain,
                 child: CachedNetworkImage(

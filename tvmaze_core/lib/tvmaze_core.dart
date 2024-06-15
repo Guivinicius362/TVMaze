@@ -7,3 +7,5 @@ export 'package:dio/dio.dart';
 export 'package:expandable/expandable.dart';
 export 'package:shimmer/shimmer.dart';
 export 'package:tvmaze_core/tvmaze_named_routes.dart';
+export 'package:cached_network_image/cached_network_image.dart';
+export 'package:flutter_html/flutter_html.dart';

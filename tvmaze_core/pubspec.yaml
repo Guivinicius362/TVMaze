@@ -7,12 +7,14 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  cached_network_image: ^3.3.1
   dio: ^5.4.3+1
   equatable: ^2.0.5
   expandable: ^5.0.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_html: ^3.0.0-beta.2
   get_it: ^7.7.0
   hive: ^2.2.3
   json_annotation: ^4.9.0

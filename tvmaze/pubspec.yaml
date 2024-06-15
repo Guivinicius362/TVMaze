@@ -14,6 +14,8 @@ dependencies:
     path: ../tvmaze_design_system
   tvmaze_shows:
     path: ../tvmaze_shows
+  tvmaze_episodes:
+    path: ../tvmaze_episodes
   cupertino_icons: ^1.0.6
 
 dev_dependencies:

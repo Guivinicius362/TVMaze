@@ -518,6 +518,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  tvmaze_episodes:
+    dependency: "direct main"
+    description:
+      path: "../tvmaze_episodes"
+      relative: true
+    source: path
+    version: "0.0.1"
   tvmaze_shows:
     dependency: "direct main"
     description:

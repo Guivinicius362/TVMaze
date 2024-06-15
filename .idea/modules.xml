@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/tvmaze/melos_tvmaze.iml" filepath="$PROJECT_DIR$/tvmaze/melos_tvmaze.iml" />
       <module fileurl="file://$PROJECT_DIR$/tvmaze_core/melos_tvmaze_core.iml" filepath="$PROJECT_DIR$/tvmaze_core/melos_tvmaze_core.iml" />
       <module fileurl="file://$PROJECT_DIR$/tvmaze_design_system/melos_tvmaze_design_system.iml" filepath="$PROJECT_DIR$/tvmaze_design_system/melos_tvmaze_design_system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tvmaze_episodes/melos_tvmaze_episodes.iml" filepath="$PROJECT_DIR$/tvmaze_episodes/melos_tvmaze_episodes.iml" />
       <module fileurl="file://$PROJECT_DIR$/tvmaze_shows/melos_tvmaze_shows.iml" filepath="$PROJECT_DIR$/tvmaze_shows/melos_tvmaze_shows.iml" />
       <module fileurl="file://$PROJECT_DIR$/melos_my_project.iml" filepath="$PROJECT_DIR$/melos_my_project.iml" />
     </modules>
