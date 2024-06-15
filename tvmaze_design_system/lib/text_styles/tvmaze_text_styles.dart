@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TvMazeTextStyles {
+class TVMazeTextStyles {
   static const subtitle1 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,

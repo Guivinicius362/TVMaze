@@ -11,7 +11,8 @@ class ShowData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+      padding: const EdgeInsets.symmetric(
+          horizontal: TVMazeSizes.size5, vertical: TVMazeSizes.size3),
       child: Column(
         children: [
           Row(
@@ -19,33 +20,33 @@ class ShowData extends StatelessWidget {
             children: [
               Text(
                 'Airs on: ${show.schedule?.days} at ${show.schedule?.time}',
-                style: TvMazeTextStyles.caption,
+                style: TVMazeTextStyles.caption,
               ),
               const SizedBox(
-                height: 8,
+                height: TVMazeSizes.size3,
               ),
               Text(
                 'Runtime: ${show.runtime} minutes',
-                style: TvMazeTextStyles.caption,
+                style: TVMazeTextStyles.caption,
               ),
             ],
           ),
           const SizedBox(
-            height: 8,
+            height: TVMazeSizes.size3,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 'Status: ${show.status} ',
-                style: TvMazeTextStyles.caption,
+                style: TVMazeTextStyles.caption,
               ),
               const SizedBox(
-                height: 8,
+                height: TVMazeSizes.size3,
               ),
               Text(
                 'Language: ${show.language}',
-                style: TvMazeTextStyles.caption,
+                style: TVMazeTextStyles.caption,
               ),
             ],
           ),

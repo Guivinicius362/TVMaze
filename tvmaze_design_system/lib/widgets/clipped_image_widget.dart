@@ -29,25 +29,26 @@ class ClippedImage extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          top: 24,
-          left: 0,
-          right: 0,
-          child: Text(
-            title,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.all(19),
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width - 92,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                style: TVMazeTextStyles.heading6,
+              ),
             ),
           ),
         ),
         Positioned(
-          bottom: 24,
-          right: 24,
+          bottom: TVMazeSizes.size6,
+          right: TVMazeSizes.size6,
           child: FloatingActionButton(
-            backgroundColor: TvmazeColors.phthaloGreen,
+            backgroundColor: TVMazeColors.phthaloGreen,
             shape: const CircleBorder(),
             onPressed: () {
               // Handle favorite button press
@@ -59,8 +60,8 @@ class ClippedImage extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 24,
-          left: 24,
+          top: TVMazeSizes.size6,
+          left: TVMazeSizes.size6,
           child: GestureDetector(
             onTap: () {
               Navigator.of(context).pop();
@@ -68,7 +69,7 @@ class ClippedImage extends StatelessWidget {
             child: const Icon(
               Icons.arrow_back_ios,
               color: Colors.white,
-              size: 24,
+              size: TVMazeSizes.size6,
             ),
           ),
         ),

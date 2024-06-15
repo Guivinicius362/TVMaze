@@ -26,17 +26,17 @@ class EpisodeDetailsPage extends StatelessWidget {
                 children: [
                   Text(
                     'Season ${episode.season.toString()}',
-                    style: TvMazeTextStyles.subtitle1,
+                    style: TVMazeTextStyles.subtitle1,
                   ),
                   const Spacer(),
                   Text(
                     'Episode ${episode.number.toString()}',
-                    style: TvMazeTextStyles.subtitle1,
+                    style: TVMazeTextStyles.subtitle1,
                   ),
                   const Spacer(),
                   Text(
                     'Rating ${episode.rating?.average.toString()}',
-                    style: TvMazeTextStyles.subtitle1,
+                    style: TVMazeTextStyles.subtitle1,
                   ),
                 ],
               ),
@@ -60,11 +60,11 @@ class EpisodeDetailsPage extends StatelessWidget {
                 children: [
                   Text(
                     'Aired on ${episode.airdate} at ${episode.airtime}',
-                    style: TvMazeTextStyles.caption,
+                    style: TVMazeTextStyles.caption,
                   ),
                   Text(
                     'Runtime ${episode.runtime.toString()} minutes',
-                    style: TvMazeTextStyles.caption,
+                    style: TVMazeTextStyles.caption,
                   ),
                 ],
               ),

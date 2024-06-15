@@ -40,30 +40,63 @@ class _ShowsListState extends State<ShowsList> {
       value: _cubit,
       child: Column(
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search',
-                    hintStyle: TvMazeTextStyles.subtitle1
-                        .copyWith(color: Colors.white),
-                    prefixIcon: const Icon(Icons.search),
+          const SizedBox(height: TVMazeSizes.size3),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: TVMazeSizes.size5),
+            child: Expanded(
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search',
+                  hintStyle:
+                      TVMazeTextStyles.subtitle1.copyWith(color: Colors.white),
+                  prefixIcon: const Padding(
+                    padding: EdgeInsets.only(bottom: TVMazeSizes.size3),
+                    child: Icon(Icons.search),
                   ),
-                  onChanged: _cubit.onSearchChanged,
                 ),
+                style: TVMazeTextStyles.subtitle1.copyWith(color: Colors.white),
+                onChanged: _cubit.onSearchChanged,
               ),
-              IconButton(
-                icon: const Icon(Icons.sort),
-                onPressed: () {
-                  // TODO: Implement sorting logic
-                },
-              ),
-            ],
+            ),
           ),
           Expanded(
             child: BlocBuilder<ShowsListCubit, ShowsListState>(
               builder: (context, state) {
+                if (state is ShowsListLoading) {
+                  return Padding(
+                    padding: const EdgeInsets.only(top: TVMazeSizes.size5),
+                    child: Column(
+                      children: [
+                        Expanded(
+                          child: GridView.count(
+                            controller: _scrollController,
+                            crossAxisCount: 2,
+                            childAspectRatio: 0.8,
+                            mainAxisSpacing: TVMazeSizes.size3,
+                            crossAxisSpacing: TVMazeSizes.size3,
+                            children: List.generate(10, (index) {
+                              return Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: TVMazeSizes.size3),
+                                child: Shimmer.fromColors(
+                                  baseColor: TVMazeColors.baseShimmerColor,
+                                  highlightColor:
+                                      TVMazeColors.highlightShimmerColor,
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+
                 if (state is ShowsListLoaded) {
                   return Padding(
                     padding: const EdgeInsets.only(top: TVMazeSizes.size5),
@@ -74,8 +107,8 @@ class _ShowsListState extends State<ShowsList> {
                             controller: _scrollController,
                             crossAxisCount: 2,
                             childAspectRatio: 0.8,
-                            mainAxisSpacing: 8,
-                            crossAxisSpacing: 8,
+                            mainAxisSpacing: TVMazeSizes.size3,
+                            crossAxisSpacing: TVMazeSizes.size3,
                             children:
                                 List.generate(state.shows.length, (index) {
                               final show = state.shows[index];

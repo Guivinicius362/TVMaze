@@ -13,9 +13,9 @@ class ShowSeasonListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(TVMazeSizes.size3),
       child: SizedBox(
-        height: 48,
+        height: TVMazeSizes.size8,
         width: double.infinity,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
@@ -28,12 +28,12 @@ class ShowSeasonListWidget extends StatelessWidget {
               child: Container(
                 width: 100,
                 color: selectedSeasonIndex == index
-                    ? TvmazeColors.phthaloGreen
-                    : TvmazeColors.phthaloGreen.withOpacity(0.5),
+                    ? TVMazeColors.phthaloGreen
+                    : TVMazeColors.phthaloGreen.withOpacity(0.5),
                 child: Center(
                   child: Text(
                     seasons[index].number.toString(),
-                    style: TvMazeTextStyles.button.copyWith(
+                    style: TVMazeTextStyles.button.copyWith(
                       color: Colors.white,
                     ),
                   ),

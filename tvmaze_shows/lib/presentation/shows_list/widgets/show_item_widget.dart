@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:tvmaze_core/tvmaze_core.dart';
 import 'package:tvmaze_shows/domain/models/show/show_model.dart';
 
 class ShowItemWidget extends StatelessWidget {

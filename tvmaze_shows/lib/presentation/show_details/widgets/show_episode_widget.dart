@@ -30,8 +30,8 @@ class ShowEpisodeWidget extends StatelessWidget {
                   imageUrl: episode.image?.original ?? '',
                   progressIndicatorBuilder: (context, url, progress) {
                     return Shimmer.fromColors(
-                      baseColor: Colors.grey[300]!,
-                      highlightColor: Colors.grey[100]!,
+                      baseColor: TVMazeColors.baseShimmerColor,
+                      highlightColor: TVMazeColors.highlightShimmerColor,
                       child: Container(
                         width: double.infinity,
                         height: 220,
@@ -43,32 +43,24 @@ class ShowEpisodeWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 24,
-              left: 16,
+              top: TVMazeSizes.size6,
+              left: TVMazeSizes.size5,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(TVMazeSizes.size3),
                 child: Text(
                   episode.number.toString(),
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  style: TVMazeTextStyles.subtitle1,
                 ),
               ),
             ),
             Positioned(
-              top: 24,
-              right: 16,
+              top: TVMazeSizes.size6,
+              right: TVMazeSizes.size5,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(TVMazeSizes.size3),
                 child: Text(
                   episode.name!,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  style: TVMazeTextStyles.subtitle1,
                 ),
               ),
             ),

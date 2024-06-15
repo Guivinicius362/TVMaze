@@ -42,9 +42,12 @@ class _ShowsListPageState extends State<ShowsListPage>
     return Scaffold(
       backgroundColor: Colors.black54,
       appBar: AppBar(
-        title: const Text(
-          'TV Maze',
-          style: TvMazeTextStyles.heading6,
+        backgroundColor: Colors.black,
+        title: Text(
+          AppLocalizations.of(context)?.helloWorld ?? 'failed',
+          style: TVMazeTextStyles.heading6.copyWith(
+            color: TVMazeColors.phthaloGreen,
+          ),
         ),
         centerTitle: true,
         bottom: PreferredSize(
@@ -53,27 +56,29 @@ class _ShowsListPageState extends State<ShowsListPage>
             alignment: Alignment.center,
             child: TabBar(
               tabAlignment: TabAlignment.center,
-              labelColor: Colors.black,
-              isScrollable: true,
+              isScrollable: false,
               controller: _tabController,
-              indicatorColor: Colors.black,
-              indicatorSize: TabBarIndicatorSize.label,
               unselectedLabelColor: Colors.grey,
-              indicator: const BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: Colors.black,
-                    width: 2,
-                  ),
-                ),
-              ),
-              labelStyle: const TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: TVMazeSizes.size5,
+              labelStyle: TVMazeTextStyles.subtitle1.copyWith(
+                color: TVMazeColors.phthaloGreen,
               ),
               tabs: const [
-                Tab(text: 'Shows'),
-                Tab(text: 'Favorites Show'),
+                Tab(
+                  child: SizedBox(
+                    width: 150, // Adjust this value as needed
+                    child: Center(
+                      child: Text('Shows'),
+                    ),
+                  ),
+                ),
+                Tab(
+                  child: SizedBox(
+                    width: 150, // Adjust this value as needed
+                    child: Center(
+                      child: Text('Favorites Show'),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

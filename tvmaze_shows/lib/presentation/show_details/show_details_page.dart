@@ -41,7 +41,7 @@ class ShowDetailsPage extends StatelessWidget {
                       children: [
                         const Text(
                           'Seasons',
-                          style: TvMazeTextStyles.heading6,
+                          style: TVMazeTextStyles.heading6,
                         ),
                         ShowSeasonListWidget(
                           seasons: state.seasons,
@@ -52,7 +52,7 @@ class ShowDetailsPage extends StatelessWidget {
                               state.seasons[state.selectedSeasonIndex].episodes,
                         ),
                         const SizedBox(
-                          height: 16,
+                          height: TVMazeSizes.size5,
                         ),
                       ],
                     );
