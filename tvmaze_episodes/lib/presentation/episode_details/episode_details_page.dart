@@ -16,6 +16,7 @@ class EpisodeDetailsPage extends StatelessWidget {
         child: Column(
           children: [
             ClippedImage(
+              heroId: episode.image?.original ?? '',
               imageURL: episode.image?.original ?? '',
               title: episode.name ?? '',
             ),

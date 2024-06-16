@@ -6,6 +6,7 @@ import 'package:tvmaze_design_system/widgets/clipped_image_widget.dart';
 import 'package:tvmaze_shows/domain/models/season/season_model.dart';
 import 'package:tvmaze_shows/domain/models/show/show_model.dart';
 import 'package:tvmaze_shows/presentation/show_details/bloc/show_details_cubit.dart';
+import 'package:tvmaze_shows/presentation/shows_list/shows_list.dart';
 
 part './widgets/show_data_widget.dart';
 part './widgets/show_season_list_widget.dart';
@@ -27,6 +28,7 @@ class ShowDetailsPage extends StatelessWidget {
           child: Column(
             children: [
               ClippedImage(
+                heroId: '${show.image!.original}${ShowsListType.all}',
                 imageURL: show.image!.original,
                 title: show.name ?? '',
                 bottomLeftWidget: Positioned(

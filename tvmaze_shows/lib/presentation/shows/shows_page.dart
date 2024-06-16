@@ -55,7 +55,7 @@ class _ShowsPageState extends State<ShowsPage>
               tabs: [
                 Tab(
                   child: SizedBox(
-                    width: 150, // Adjust this value as needed
+                    width: 88, // Adjust this value as needed
                     child: Center(
                       child: Text(AppLocalizations.of(context)?.shows ?? ''),
                     ),
@@ -63,7 +63,7 @@ class _ShowsPageState extends State<ShowsPage>
                 ),
                 Tab(
                   child: SizedBox(
-                    width: 150, // Adjust this value as needed
+                    width: 88, // Adjust this value as needed
                     child: Center(
                       child:
                           Text(AppLocalizations.of(context)?.favorites ?? ''),

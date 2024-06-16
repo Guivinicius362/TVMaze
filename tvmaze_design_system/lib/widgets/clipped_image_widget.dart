@@ -9,11 +9,13 @@ class ClippedImage extends StatelessWidget {
     required this.imageURL,
     required this.title,
     this.bottomLeftWidget,
+    required this.heroId,
   });
 
   final String imageURL;
   final String title;
   final Widget? bottomLeftWidget;
+  final String heroId;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class ClippedImage extends StatelessWidget {
         ClipPath(
           clipper: PosterClipper(),
           child: Hero(
-            tag: imageURL,
+            tag: heroId,
             child: FittedBox(
               fit: BoxFit.contain,
               child: CachedNetworkImage(
@@ -32,7 +34,7 @@ class ClippedImage extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(19),
+          padding: const EdgeInsets.all(42),
           child: Align(
             alignment: Alignment.topCenter,
             child: SizedBox(
@@ -48,16 +50,20 @@ class ClippedImage extends StatelessWidget {
         ),
         if (bottomLeftWidget != null) bottomLeftWidget!,
         Positioned(
-          top: TVMazeSizes.size6,
+          top: TVMazeSizes.size7,
           left: TVMazeSizes.size6,
           child: GestureDetector(
             onTap: () {
               Navigator.of(context).pop();
             },
-            child: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.white,
-              size: TVMazeSizes.size6,
+            child: const SizedBox(
+              width: TVMazeSizes.size8,
+              height: TVMazeSizes.size8,
+              child: Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+                size: TVMazeSizes.size6,
+              ),
             ),
           ),
         ),
