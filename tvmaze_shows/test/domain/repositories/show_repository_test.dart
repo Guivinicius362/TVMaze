@@ -53,8 +53,8 @@ void main() {
       when(() => mockRemoteShowDataSource.getShows(any()))
           .thenThrow(Exception());
 
-      expect(
-          () async => await repository.getShows(0), throwsA(isA<Exception>()));
+      expect(() async => await repository.getShows(0),
+          throwsA(isA<TVMazeUnknownError>()));
     });
   });
 

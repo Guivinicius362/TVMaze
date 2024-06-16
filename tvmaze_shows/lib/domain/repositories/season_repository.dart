@@ -13,11 +13,21 @@ class SeasonRepositoryImpl implements SeasonRepository {
 
   @override
   Future<List<SeasonModel>> getSeasons(int showId) async {
-    final response = await remoteSeasonDataSource.getSeasons(showId);
-    final List<SeasonModel> seasons = [];
-    for (final season in response.data!) {
-      seasons.add(SeasonModel.fromJson(season as Map<String, dynamic>));
+    try {
+      final response = await remoteSeasonDataSource.getSeasons(showId);
+      final List<SeasonModel> seasons = [];
+      for (final season in response.data!) {
+        seasons.add(SeasonModel.fromJson(season as Map<String, dynamic>));
+      }
+      return seasons;
+    } on DioException catch (e) {
+      if (e.response != null) {
+        throw TVMazeServerError(e.response!.statusMessage!);
+      } else {
+        throw TVMazeNetworkError(e.message ?? 'Network error');
+      }
+    } catch (e) {
+      throw TVMazeUnknownError(e.toString());
     }
-    return seasons;
   }
 }

@@ -14,18 +14,40 @@ class PeopleRepositoryImpl implements PeopleRepository {
 
   @override
   Future<List<PeopleModel>> getPeople() async {
-    final response = await _remotePeopleDataSource.getPeople();
-    return (response.data as List).map((e) => PeopleModel.fromJson(e)).toList();
+    try {
+      final response = await _remotePeopleDataSource.getPeople();
+      return (response.data as List)
+          .map((e) => PeopleModel.fromJson(e))
+          .toList();
+    } on DioException catch (e) {
+      if (e.response != null) {
+        throw TVMazeServerError(e.response!.statusMessage!);
+      } else {
+        throw TVMazeNetworkError(e.message ?? 'Network error');
+      }
+    } catch (e) {
+      throw TVMazeUnknownError(e.toString());
+    }
   }
 
   @override
   Future<List<PeopleModel>> getPeopleSearch(String query) async {
-    final response = await _remotePeopleDataSource.getPeopleSearch(query);
-    final List<PeopleModel> peopleList = [];
-    for (final data in response.data!) {
-      final people = data['person'];
-      peopleList.add(PeopleModel.fromJson(people as Map<String, dynamic>));
+    try {
+      final response = await _remotePeopleDataSource.getPeopleSearch(query);
+      final List<PeopleModel> peopleList = [];
+      for (final data in response.data!) {
+        final people = data['person'];
+        peopleList.add(PeopleModel.fromJson(people as Map<String, dynamic>));
+      }
+      return peopleList;
+    } on DioException catch (e) {
+      if (e.response != null) {
+        throw TVMazeServerError(e.response!.statusMessage!);
+      } else {
+        throw TVMazeNetworkError(e.message ?? 'Network error');
+      }
+    } catch (e) {
+      throw TVMazeUnknownError(e.toString());
     }
-    return peopleList;
   }
 }

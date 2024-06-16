@@ -13,3 +13,4 @@ export 'package:flutter_localizations/flutter_localizations.dart';
 export 'package:intl/intl.dart';
 export 'package:tvmaze_core/l10n/app_localizations.dart';
 export 'package:tvmaze_core/hive/tvmaze_hive.dart';
+export 'package:tvmaze_core/domain/models/tvmaze_error/base_tvmaze_error.dart';

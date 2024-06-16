@@ -18,8 +18,10 @@ class ShowsListCubit extends Cubit<ShowsListState> {
     try {
       final shows = await _getShowsByPageUseCase(0);
       emit(ShowsListLoaded(shows, 0));
+    } on TVMazeError catch (e) {
+      emit(ShowsListError(e));
     } catch (e) {
-      emit(ShowsListError(e.toString()));
+      emit(ShowsListError(TVMazeUnknownError(e.toString())));
     }
   }
 
@@ -30,8 +32,10 @@ class ShowsListCubit extends Cubit<ShowsListState> {
       try {
         final shows = await _getShowsByPageUseCase(currentPage);
         emit(ShowsListLoaded([...cubitShows, ...shows], currentPage));
+      } on TVMazeError catch (e) {
+        emit(ShowsListError(e));
       } catch (e) {
-        emit(ShowsListError(e.toString()));
+        emit(ShowsListError(TVMazeUnknownError(e.toString())));
       }
     }
   }
@@ -40,8 +44,10 @@ class ShowsListCubit extends Cubit<ShowsListState> {
     try {
       final shows = await _searchShowByQueryUseCase(query);
       emit(ShowsListLoaded(shows, 0));
+    } on TVMazeError catch (e) {
+      emit(ShowsListError(e));
     } catch (e) {
-      emit(ShowsListError(e.toString()));
+      emit(ShowsListError(TVMazeUnknownError(e.toString())));
     }
   }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tvmaze_core/tvmaze_core.dart';
 import 'package:tvmaze_design_system/tvmaze_design_system.dart';
+import 'package:tvmaze_design_system/widgets/network_error_widget.dart';
 import 'package:tvmaze_shows/domain/models/show/show_model.dart';
 import 'package:tvmaze_shows/presentation/shows_list/bloc/shows_list_cubit.dart';
 
@@ -102,8 +103,10 @@ class _ShowsListState extends State<ShowsList> {
                     ),
                   );
                 } else if (state is ShowsListError) {
-                  return Center(
-                    child: Text(state.message),
+                  return GenericErrorWidget(
+                    message: state.error.message,
+                    icon: Icons.error,
+                    description: state.error.stackTrace ?? '',
                   );
                 }
 

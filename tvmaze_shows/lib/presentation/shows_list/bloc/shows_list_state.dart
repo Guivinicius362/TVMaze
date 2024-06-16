@@ -31,10 +31,10 @@ class ShowsListLoaded extends ShowsListState {
 }
 
 class ShowsListError extends ShowsListState {
-  final String message;
+  final TVMazeError error;
 
-  const ShowsListError(this.message);
+  const ShowsListError(this.error);
 
   @override
-  List<Object> get props => [message];
+  List<Object> get props => [error];
 }

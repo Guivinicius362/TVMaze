@@ -2,7 +2,6 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:tvmaze_core/tvmaze_core.dart';
-import 'package:tvmaze_shows/domain/models/show/show_model.dart';
 import 'package:tvmaze_shows/domain/use_cases/get_shows_by_page_use_case.dart';
 import 'package:tvmaze_shows/domain/use_cases/search_show_by_query_use_case.dart';
 import 'package:tvmaze_shows/presentation/shows_list/bloc/shows_list_cubit.dart';
@@ -64,19 +63,18 @@ void main() {
       ShowsListLoaded([showModelMock], 0),
     ],
   );
-
+  final error = TVMazeUnknownError('Error loading shows');
   blocTest<ShowsListCubit, ShowsListState>(
     'emits [ShowsListLoading, ShowsListError] when onSearchChanged fails',
     build: () {
-      when(() => searchShowByQueryUseCase(any()))
-          .thenThrow(Exception('Error loading shows'));
+      when(() => searchShowByQueryUseCase(any())).thenThrow(error);
       return cubit;
     },
     act: (cubit) => cubit.onSearchChanged('123'),
     wait: const Duration(seconds: 1),
     expect: () => <ShowsListState>[
       const ShowsListLoading(),
-      const ShowsListError('Exception: Error loading shows'),
+      ShowsListError(error),
     ],
   );
 

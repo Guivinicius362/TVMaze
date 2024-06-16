@@ -13,11 +13,21 @@ class EpisodeRepositoryImpl implements EpisodeRepository {
 
   @override
   Future<List<EpisodeModel>> getEpisodes(int showId) async {
-    final response = await remoteEpisodeDataSource.getEpisodes(showId);
-    final List<EpisodeModel> episodes = [];
-    for (final episode in response.data!) {
-      episodes.add(EpisodeModel.fromJson(episode as Map<String, dynamic>));
+    try {
+      final response = await remoteEpisodeDataSource.getEpisodes(showId);
+      final List<EpisodeModel> episodes = [];
+      for (final episode in response.data!) {
+        episodes.add(EpisodeModel.fromJson(episode as Map<String, dynamic>));
+      }
+      return episodes;
+    } on DioException catch (e) {
+      if (e.response != null) {
+        throw TVMazeServerError(e.response!.statusMessage!);
+      } else {
+        throw TVMazeNetworkError(e.message ?? 'Network error');
+      }
+    } catch (e) {
+      throw TVMazeUnknownError(e.toString());
     }
-    return episodes;
   }
 }

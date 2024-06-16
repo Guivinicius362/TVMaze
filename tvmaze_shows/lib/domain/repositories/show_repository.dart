@@ -19,23 +19,43 @@ class ShowRepositoryImpl implements ShowRepository {
 
   @override
   Future<List<ShowModel>> getShows(int page) async {
-    final response = await _remoteShowDataSource.getShows(page);
-    final List<ShowModel> shows = [];
-    for (final show in response.data!) {
-      shows.add(ShowModel.fromJson(show as Map<String, dynamic>));
+    try {
+      final response = await _remoteShowDataSource.getShows(page);
+      final List<ShowModel> shows = [];
+      for (final data in response.data!) {
+        shows.add(ShowModel.fromJson(data as Map<String, dynamic>));
+      }
+      return shows;
+    } on DioException catch (e) {
+      if (e.response != null) {
+        throw TVMazeServerError(e.response!.statusMessage!);
+      } else {
+        throw TVMazeNetworkError(e.message ?? 'Network error');
+      }
+    } catch (e) {
+      throw TVMazeUnknownError(e.toString());
     }
-    return shows;
   }
 
   @override
   Future<List<ShowModel>> searchShow(String query) async {
-    final response = await _remoteShowDataSource.searchShow(query);
-    final List<ShowModel> shows = [];
-    for (final data in response.data!) {
-      final show = data['show'];
-      shows.add(ShowModel.fromJson(show as Map<String, dynamic>));
+    try {
+      final response = await _remoteShowDataSource.searchShow(query);
+      final List<ShowModel> shows = [];
+      for (final data in response.data!) {
+        final show = data['show'];
+        shows.add(ShowModel.fromJson(show as Map<String, dynamic>));
+      }
+      return shows;
+    } on DioException catch (e) {
+      if (e.response != null) {
+        throw TVMazeServerError(e.response!.statusMessage!);
+      } else {
+        throw TVMazeNetworkError(e.message ?? 'Network error');
+      }
+    } catch (e) {
+      throw TVMazeUnknownError(e.toString());
     }
-    return shows;
   }
 
   @override
