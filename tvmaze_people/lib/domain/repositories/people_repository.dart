@@ -21,11 +21,11 @@ class PeopleRepositoryImpl implements PeopleRepository {
   @override
   Future<List<PeopleModel>> getPeopleSearch(String query) async {
     final response = await _remotePeopleDataSource.getPeopleSearch(query);
-    final List<PeopleModel> peoples = [];
+    final List<PeopleModel> peopleList = [];
     for (final data in response.data!) {
       final people = data['person'];
-      peoples.add(PeopleModel.fromJson(people as Map<String, dynamic>));
+      peopleList.add(PeopleModel.fromJson(people as Map<String, dynamic>));
     }
-    return peoples;
+    return peopleList;
   }
 }
