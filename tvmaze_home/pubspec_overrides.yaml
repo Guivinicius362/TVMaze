@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: tvmaze_core,tvmaze_design_system,tvmaze_people,tvmaze_shows
+dependency_overrides:
+  tvmaze_core:
+    path: ../tvmaze_core
+  tvmaze_design_system:
+    path: ../tvmaze_design_system
+  tvmaze_people:
+    path: ../tvmaze_people
+  tvmaze_shows:
+    path: ../tvmaze_shows

@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: tvmaze_core,tvmaze_design_system,tvmaze_shows,tvmaze_episodes,tvmaze_people
+# melos_managed_dependency_overrides: tvmaze_core,tvmaze_design_system,tvmaze_shows,tvmaze_episodes,tvmaze_people,tvmaze_home
 dependency_overrides:
   tvmaze_core:
     path: ../tvmaze_core
@@ -6,6 +6,8 @@ dependency_overrides:
     path: ../tvmaze_design_system
   tvmaze_episodes:
     path: ../tvmaze_episodes
+  tvmaze_home:
+    path: ../tvmaze_home
   tvmaze_people:
     path: ../tvmaze_people
   tvmaze_shows:

@@ -7,3 +7,4 @@ packages:
   - tvmaze_shows/
   - tvmaze_episodes/
   - tvmaze_people/
+  - tvmaze_home
