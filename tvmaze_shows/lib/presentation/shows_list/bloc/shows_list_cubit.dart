@@ -48,6 +48,7 @@ class ShowsListCubit extends Cubit<ShowsListState> {
   void onSearchChanged(String searchText) {
     emit(const ShowsListLoading());
     if (searchText.isEmpty) {
+      _debounce?.cancel();
       init();
       return;
     }

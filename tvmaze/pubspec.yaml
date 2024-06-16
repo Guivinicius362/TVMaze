@@ -16,6 +16,11 @@ dependencies:
     path: ../tvmaze_shows
   tvmaze_episodes:
     path: ../tvmaze_episodes
+  tvmaze_people:
+    path: ../tvmaze_people
+  tvmaze_home:
+    path: ../tvmaze_home
+
   cupertino_icons: ^1.0.6
 
 dev_dependencies:

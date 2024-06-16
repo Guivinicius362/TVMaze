@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tvmaze_core/tvmaze_core.dart';
 import 'package:tvmaze_design_system/tvmaze_design_system.dart';
 import 'package:tvmaze_shows/presentation/favorite_shows_list/bloc/favorite_shows_list_cubit.dart';
-import 'package:tvmaze_shows/presentation/shows_list/bloc/shows_list_cubit.dart';
 import 'package:tvmaze_shows/presentation/shows_list/shows_list.dart';
 
 class FavoriteShowsList extends StatefulWidget {

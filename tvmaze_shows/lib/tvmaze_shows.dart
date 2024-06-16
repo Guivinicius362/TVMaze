@@ -2,7 +2,7 @@ import 'package:tvmaze_core/tvmaze_core.dart';
 import 'package:tvmaze_shows/data/local_data_sources/local_show_data_source.dart';
 import 'package:tvmaze_shows/data/remote_data_sources/remote_season_data_source.dart';
 import 'package:tvmaze_shows/data/remote_data_sources/remote_show_data_source.dart';
-import 'package:tvmaze_shows/domain/models/country/country_model.dart';
+import 'package:tvmaze_core/domain/models/country/country_model.dart';
 import 'package:tvmaze_shows/domain/models/network/network_model.dart';
 import 'package:tvmaze_shows/domain/models/season/season_model.dart';
 import 'package:tvmaze_shows/domain/models/show/external/external_model.dart';

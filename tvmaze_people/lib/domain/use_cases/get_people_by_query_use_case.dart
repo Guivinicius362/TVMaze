@@ -1,0 +1,13 @@
+import 'package:tvmaze_core/tvmaze_core.dart';
+import 'package:tvmaze_people/domain/models/people_model.dart';
+import 'package:tvmaze_people/domain/repositories/people_repository.dart';
+
+class GetPeopleByQueryUseCase {
+  GetPeopleByQueryUseCase();
+
+  final _peopleRepository = GetIt.instance<PeopleRepository>();
+
+  Future<List<PeopleModel>> call(String query) {
+    return _peopleRepository.getPeopleSearch(query);
+  }
+}
